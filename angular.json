@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "task-tracking-client"
+    }
+  },
+  "defaultProject": "task-tracking-client",
+  "cli": {
+    "analytics": "14ad5b08-4fbf-45f1-a4dc-22e04a0794ed"
+  }
 }
