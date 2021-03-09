@@ -5,6 +5,10 @@ import { TaskDetailsComponent } from './pages/task-details/task-details.componen
 import { TaskListComponent } from './pages/task-list/task-list.component';
 import { TaskRoutingModule } from './task-routing.module';
 import { RouterModule } from '@angular/router';
+import {ReactiveFormsModule } from '@angular/forms';
+import { TaskService } from 'src/app/core/services/task.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -15,7 +19,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     TaskRoutingModule,
-    RouterModule
-  ]
+    RouterModule,
+    ReactiveFormsModule,
+    NgbModalModule,
+  ],
+  providers:[]
 })
 export class TaskModule { }

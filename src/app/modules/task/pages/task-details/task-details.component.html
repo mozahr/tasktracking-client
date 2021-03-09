@@ -1,1 +1,32 @@
-<p>task-details works!</p>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Details</h3>
+        </div>
+    </div>
+    <form [formGroup]="form"  (ngSubmit)="onSubmit()" #myform="ngForm">
+        <div class="form-group">
+          <label for="uname">Title:</label>
+          <input formControlName ="title" type="text" class="form-control" placeholder="Enter Title"  >
+          <div class="valid-feedback">Valid.</div>
+          <div *ngIf="form.get('title').hasError('required') && myform.submitted" class="error">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="details">Details:</label>
+            <input formControlName ="details" type="text" class="form-control" placeholder="Enter Details" name="details" >
+            <div class="valid-feedback">Valid.</div>
+            <div *ngIf="form.get('details').hasError('required') && myform.submitted" class="error">Please fill out this field.</div>
+          </div>
+          <div class="form-group">
+            <label for="uname">Assignee Name:</label>
+            <input formControlName ="assignee_Name" type="text" class="form-control" placeholder="Enter Assignee Name"  >
+            <div class="valid-feedback">Valid.</div>
+            <div *ngIf="form.get('assignee_Name').hasError('required') && myform.submitted" class="error" >Please fill out this field.</div>
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary ml-2" (click)="deleteTask()">delete</button>
+      </form>
+      <span *ngIf="isSaveSucessful" class="save-success">
+          Saved succesfully
+      </span>

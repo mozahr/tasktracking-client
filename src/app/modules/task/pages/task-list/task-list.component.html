@@ -1,11 +1,32 @@
-<div class="container">
+<section class="toolbar">
     <div class="row">
         <div class="col-12">
-            <a class="btn-default" [routerLink]="['/add']">
+            <button class="btn-default" [routerLink]="['/add']">
                 Add
-            </a>
+            </button>
         </div>
     </div>
+</section>
+
+<section class="tasks">
+    <div class="row">
+        <div class="col-12">
+            <h3>Tasks</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let task of tasks">{{task.title}}
+                    <span class="badge badge-primary badge-pill" (click)="editTask(task)">details</span>
+                </li>
     
+            </ul>
+        </div>
     
-</div>
+    </div>
+
+</section>
+<section *ngIf="selectedTask" class="details">
+    <app-task-details  [task]="selectedTask" (isUpdated)="isUpdated($event)"></app-task-details>
+</section>
